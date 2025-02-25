@@ -1,15 +1,16 @@
-/**
- * Welcome to Cloudflare Workers! This is your first worker.
- *
- * - Run `npm run dev` in your terminal to start a development server
- * - Open a browser tab at http://localhost:8787/ to see your worker in action
- * - Run `npm run deploy` to publish your worker
- *
- * Learn more at https://developers.cloudflare.com/workers/
- */
-
 export default {
-	async fetch(request, env, ctx) {
-		return new Response('Hello World!');
-	},
+  async fetch(request) {
+	const clientIp = request.headers.get('CF-Connecting-IP') || 'Unknown IP';
+	const country = request.headers.get('CF-IPCountry') || 'Unkown country';
+	const data = {
+		ip: clientIp,
+		message: "success",
+		country: {
+			code: request.cf.country,
+			name: country,
+		},
+		cf: request.cf,
+	};
+	return Response.json(data);
+  },
 };
