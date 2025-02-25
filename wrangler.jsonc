@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "flat-mountain-ccc6",
+	"name": "geolocation",
 	"main": "src/index.js",
 	"compatibility_date": "2025-02-24",
 	"observability": {
