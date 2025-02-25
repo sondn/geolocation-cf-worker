@@ -6,6 +6,7 @@
 
 - [Node.js 20+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - [pnpm](https://pnpm.io/installation)
+- [Cloudflare Account](https://dash.cloudflare.com/login) Free or paid plan accepted
 
 
 ### Build and run local
